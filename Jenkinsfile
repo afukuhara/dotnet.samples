@@ -16,7 +16,7 @@ pipeline {
     stage('Build & Publish') {
       steps {
         dotnetPublish(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj')
-        dotnetPublish(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj', outputDirectory: 'C:\\work\\dotnet-work')
+        dotnetPublish(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj', outputDirectory: 'C:\\work\\dotnet-work', options: '-p:PublishSingleFile=true --self-contained true')
       }
     }
 
