@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        dotnetTest()
+        sh 'echo "hello world"'
       }
     }
 
