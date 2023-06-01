@@ -7,9 +7,16 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('Unit Test') {
       steps {
         dotnetTest(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj')
+      }
+    }
+
+    stage('Build & Publish') {
+      steps {
+        dotnetPublish(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj')
+        dotnetPublish(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj', outputDirectory: 'C:\\work\\dotnet-work')
       }
     }
 
