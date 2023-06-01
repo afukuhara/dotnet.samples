@@ -9,7 +9,7 @@ pipeline {
 
     stage('error') {
       steps {
-        sh 'echo "hello world"'
+        dotnetTest(project: 'csharp\\unit-testing\\XUnit.TestProject\\XUnit.Project.csproj')
       }
     }
 
